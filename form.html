@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ZZZ 24™</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <meta name="keywords" content="[*keyw*]" />
+    <meta name="description" content="[*desc*]" />
+    <base href="[(site_url)]"/>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html"><img class="logo" src="img/logo.png"></a>
+            <p class="slogan">Игровой сервер ARMA 3 | Exile Mod</p>
+            <p class="ip_and_port">
+                <span>IP:</span>
+                &nbsp;&nbsp;217.144.172.195&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>port:</span> 2302
+            </p>
+            
+            <div class="signForm">
+                <img class="imgprofile" src="img/logo_default_exile.png" alt="">
+                <form action="[~[*id*]~]" method="post">
+                    <input type="hidden">
+                    <input type="text" placeholder="Погоняло"><br>
+                    <input type="password" placeholder="Пароль"><br>
+                    <input type="submit" value="Войти">
+                </form>
+                <div class="profbutton"><a href="#">Зарегистрироваться</a> | <a href="#">Забыл пароль?</a></div>
+            </div>
+        </div>
+    </div>
+    
+     <div class="menu">
+            <ul class="topmenu">
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="files.html">Файлы</a></li>
+                <li><a href="rules.html">Правила</a></li>
+                <li><a href="gallery.html">Фото Галерея</a></li>
+                <li><a href="#">DONAT</a></li>
+                <li><a href="about_server.html">О сервере</a></li>
+            </ul>
+        </div>
+    
+    <div class="content">
+        <form action="[~[*id*]~]" method="POST"  class="regForm">
+            <input type="hidden" name="reg" value="registration">
+            
+            <input id="username" type="text" name="username" placeholder="User">
+            <div>*Введите никнейм. Он должен состоять только из латинских букв</div><br>
+            <input type="email" name="email" placeholder="email">
+            <div>*Рекомендуется вводить актуальный адрес электронной почты, чтобы в случае просёра пароля, можно было его восстановить.</div><br>
+            <input type="text" name="uid" placeholder="ID игрока">
+            <div>*Уникальный id персонажа. Узнать его можно так: Профиль игрока -> Отряд -> вкладка "Отряд" -> Пункт "Отряд", Выбрать "Настраиваемый". Там и будет виден ID игрока</div><br>
+            <input id="pswd1" type="password" name="pswd"  placeholder="Пароль">
+            <input id="pswd2" type="password" name="pswd2"  placeholder="Повторить пароль"><br>
+            <div id="testt"></div>
+            <input type="file" name="avatarload" accept="image/*,image/jpeg">
+            <div>*Выбрать картинку для своего профиля. Только формат .JPG, .PNG.</div><br>
+            <input type="submit" name="enter" value="Зарегистрироваться">
+        </form>
+        <script>
+            
+$("#pswd1").blur(function(){
+$.ajax({
+        type : "GET",
+        url: "http://localhost/assets/templates/ZZZ24_project/test_page.php",
+        data: {
+            psw1 : $("#pswd1").val();
+        },
+        success: function(data){
+            $("#testt").html(data);
+        }
+    });
+});
+        
+        
+        </script>
+    </div>
+
+</body>
+</html>
